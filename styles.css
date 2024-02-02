@@ -1,0 +1,132 @@
+/* General body styling */
+body {
+    font-family: 'Cardo', serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+
+  .game-area {
+    display: flex; /* Use flex to allow centering */
+    justify-content: center; /* Center horizontally in the viewport */
+    align-items: center; /* Center vertically in the viewport */
+    width: 100%; /* Take full viewport width */
+    min-height: 100vh; /* Optional: Take at least full viewport height */
+  }
+  
+  .game-title {
+    font-family: 'Cardo', serif; /* Specifically applying 'Cardo' for the title */
+    font-size: 32px; /* Slightly larger font size for the title */
+    color: #3e2723; /* A deep brown that fits the medieval theme */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+  }
+  /* Card container styling */
+  #card-container {
+    width: 70%;
+    display: flex; /* Use flex instead of grid */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: flex-start; /* Align items to the start of the container */
+    gap: 16px; /* Maintain a gap between cards */
+    padding: 16px;
+  }
+  /* Individual card styling */
+  .card {
+    display: inline-flex; /* Use inline-flex for cards */
+    flex-direction: row; /* Layout card content in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 10px;
+    border: 1px solid #ccc; /* Visual styling */
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Text within cards */
+  .card > span {
+    text-transform: capitalize;
+  }
+  
+  /* Normal state */
+  .card:not(.selected):not(.new-card) {
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+  
+  /* Hover state */
+  .card:not(.selected):not(.new-card):hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+  }
+  
+  /* Selected state */
+  .card.selected {
+    border: 2px solid #1976d2;
+    background-color: #e3f2fd;
+  }
+  
+ 
+  
+  /* Add some padding around the game area */
+  .game-area {
+    padding: 20px;
+  }
+  
+  /* Header styling for the game */
+  .game-area > h1 {
+    text-align: center;
+    color: #424242;
+  }
+  
+  /* Animation for highlighting existing card */
+  @keyframes highlight {
+    0%, 100% { background-color: #ffecb3; }
+    50% { background-color: #fff; }
+  }
+  
+  .highlighted {
+    animation: highlight 2s ease-in-out;
+  }
+  
+  .glowing {
+    animation: glowingAnimation 1.5s infinite alternate;
+  }
+  
+  @keyframes glowingAnimation {
+    0% { box-shadow: 0 0 5px #2196f3; }
+    100% { box-shadow: 0 0 15px #2196f3; }
+  }
+
+  /* Toast notification styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #323232;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  
+  /* New element effect (e.g., a different kind of glow) */
+  .new-element-effect {
+    animation: newElementGlow 1.5s infinite alternate;
+  }
+  
+  @keyframes newElementGlow {
+    0% { box-shadow: 0 0 8px #4caf50; }
+    100% { box-shadow: 0 0 20px #4caf50; }
+  }
