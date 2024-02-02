@@ -75,6 +75,7 @@ async function mixCards() {
         cardContainer.appendChild(newCardElement);
         // Highlight the new card
         highlightCard(newCardElement);
+        fetchTotalElements();
         if (newElement.discovered === false) {
           // If the element is newly discovered
           highlightNewElementCard(newCardElement);
