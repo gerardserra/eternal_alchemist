@@ -90,6 +90,24 @@ async function mixCards() {
   }
 }
 
+async function fetchTotalElements() {
+  try {
+    const response = await fetch('https://soo6tg.buildship.run/getElements');
+    if (!response.ok) throw new Error('Failed to fetch total elements');
+    const data = await response.json();
+    // Assuming the API returns { total: number }
+    updateElementsDiscovered(document.querySelectorAll('#card-container .card').length, data); // Initial call with 0 discovered
+  } catch (error) {
+    console.error('Error fetching total elements:', error);
+  }
+}
+
+function updateElementsDiscovered(discovered, total) {
+  const elementsDiscoveredEl = document.getElementById('elements-discovered');
+  elementsDiscoveredEl.textContent = `Elements Discovered: ${discovered} / ${total}`;
+}
+  
+
 function showToast(message) {
   const toast = document.createElement("div");
   toast.classList.add("toast");
@@ -165,3 +183,4 @@ function initGame() {
 }
 
 initGame();
+fetchTotalElements();

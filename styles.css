@@ -8,11 +8,9 @@ body {
   
 
   .game-area {
-    display: flex; /* Use flex to allow centering */
-    justify-content: center; /* Center horizontally in the viewport */
-    align-items: center; /* Center vertically in the viewport */
-    width: 100%; /* Take full viewport width */
-    min-height: 100vh; /* Optional: Take at least full viewport height */
+    width: 70%; /* Or your preferred width */
+    margin: 0 auto; /* Center the game area */
+    text-align: center; /* Center the text inside the game area */
   }
   
   .game-title {
@@ -23,12 +21,10 @@ body {
     margin: 0;
     padding: 20px;
   }
-  /* Card container styling */
   #card-container {
-    width: 70%;
-    display: flex; /* Use flex instead of grid */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: flex-start; /* Align items to the start of the container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards within the container */
     gap: 16px; /* Maintain a gap between cards */
     padding: 16px;
   }
