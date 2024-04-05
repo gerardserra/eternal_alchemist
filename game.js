@@ -10,6 +10,7 @@ let selectedCards = [];
 function createCardElement(element) {
   const card = document.createElement("div");
   card.classList.add("card");
+  console.log("hello");
   card.textContent = `${element.name}`;
   card.onclick = function () {
     selectCard(element, card);
