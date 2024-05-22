@@ -21,7 +21,7 @@ function createCardElement(element) {
 function selectCard(element, cardElement) {
   // Add the selected element to the selectedCards array
   selectedCards.push(element);
-  //
+  //sdasdas dsadas
 
   // Visually indicate that the card has been selected
   cardElement.classList.add("selected", "glowing");
